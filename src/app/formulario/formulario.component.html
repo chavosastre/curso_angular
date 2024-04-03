@@ -1,0 +1,30 @@
+<div class="container mt-4 col-lg-12 col-sm-12" style="text-align: center;">
+    <div class="row">
+        <div class="col-sm-4 col-lg-4"></div>
+        <div class="col-sm-4 col-lg-4">
+            <input type="text" placeholder="Ingresa tu nombre" #nombre>
+        </div>
+        <div class="col-sm-4 col-lg-4"></div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-sm-4 col-lg-4"></div>
+        <div class="col-sm-4 col-lg-4">
+            <button class="btn btn-primary" (click)="mostrarConsola(nombre.value)">Mostrar en consola</button>
+        </div>
+        <div class="col-sm-4 col-lg-4"></div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-sm-4 col-lg-4"></div>
+        <div class="alert alert-primary mt-4" *ngIf="mostrarAlerta; else mensajeAlerta">
+            <p>Se ha enviado el mensaje solicitado.</p>
+            <button class="btn btn-danger" (click)="mostrarAlerta = false">X</button>
+        </div>
+        <div class="col-sm-4 col-lg-4"></div>
+    </div>
+
+    <ng-template #mensajeAlerta>
+        <div class="alert alert-danger mt-4">
+            Menaje de Prueba
+        </div>
+    </ng-template>
+</div>

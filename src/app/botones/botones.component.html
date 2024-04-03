@@ -1,0 +1,28 @@
+<div style="text-align: center;">
+
+    <div class="mt-5">
+        <button [class.disabled]="botonHabilitado" class="btn btn-danger" (click)="colorTexto = 'text-danger'">Rojo</button>
+        <button [class.disabled]="botonHabilitado" class="btn btn-success mx-2" (click)="colorTexto = 'text-success'">Verde</button>
+        <button [class.disabled]="botonHabilitado" class="btn btn-primary" (click)="colorTexto = 'text-primary'">Azul</button>
+        <!-- <button [class]="{
+            'disabled':botonHabilitado
+        }" class="btn btn-success" (click)="colorTexto = 'text-success'">Verde</button>
+        <button [class]="{
+            'disabled':botonHabilitado
+        }" class="btn btn-primary  mx-2" (click)="colorTexto = 'text-primary'">Azul</button>
+        <button [class]="{
+            'disabled':botonHabilitado
+        }" class="btn btn-danger" (click)="colorTexto = 'text-danger'">Rojo</button> -->
+    </div>
+
+    <p [class]="colorTexto"><b>Texto de color</b></p>
+
+    <button class="btn btn-secondary" (click)="botonHabilitado = !botonHabilitado">Activar / Desactivar</button>
+
+    <div class="mt-5 mb-2">
+        <button class="btn btn-primary mx-1" (click)="imagenSource = 'https://images.pexels.com/photos/19809370/pexels-photo-19809370/free-photo-of-mar-paisaje-playa-vacaciones.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load'">Imagen 1</button>
+        <button class="btn btn-danger mx-1" (click)="imagenSource = 'https://images.pexels.com/photos/3892273/pexels-photo-3892273.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load'">Imagen 1</button>
+        
+    </div>
+    <img [src]="imagenSource" alt="">
+</div>

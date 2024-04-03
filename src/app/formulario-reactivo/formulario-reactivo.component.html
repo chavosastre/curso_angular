@@ -1,0 +1,81 @@
+<!-- <div class="card mt-5">
+    <div class="card-body">
+        <form [formGroup]="formUser">
+            <div class="mb-2">
+                <label class="form-label">
+                    Nombre
+                </label>
+                <input type="text" [formControl]="name" class="form-control" placeholder="Por favor ingresa tu nombre">
+                <div class="alert alert-danger mt-2" [hidden]="name.valid || name.pristine">
+                    El nombre es obligatorio
+                </div>
+            </div>
+            <div class="mb-2">
+                <label class="form-label">
+                    Email
+                </label>
+                <input type="email" [formControl]="email" class="form-control" placeholder="Por favor ingresa tu email">
+                <div class="alert alert-danger mt-2" [hidden]="email.valid || email.pristine">
+                    <span *ngIf="email.errors?.['required']">
+                        El email es obligatorio.
+                    </span>
+                    <span *ngIf="email.errors?.['email']">
+                        El email no tiene el formato válido
+                    </span>
+                </div>
+            </div>
+            <button class="btn btn-primary">
+                Enviar
+            </button>
+        </form>
+    </div>
+</div> -->
+ 
+<div class="card mt-5">
+    <div class="card-body">
+        <form [formGroup]="formUser" (ngSubmit)="procesar()">
+            <div class="mb-2">
+                <label class="form-label">
+                    Nombre
+                </label>
+                <input type="text" formControlName="name" class="form-control" placeholder="Por favor ingresa tu nombre">
+                <div class="alert alert-danger mt-2" [hidden]="formUser.get('name')?.valid || formUser.get('name')?.pristine">
+                    El nombre es obligatorio
+                </div>
+            </div>
+            <div class="mb-2">
+                <label class="form-label">
+                    Email
+                </label>
+                <input type="email" formControlName="email" class="form-control" placeholder="Por favor ingresa tu email">
+                
+                <div class="alert alert-danger mt-2" [hidden]="formUser.get('email')?.valid || formUser.get('email')?.pristine">
+                   <span *ngIf="formUser.get('email')?.errors?.['required']">
+                        El email es Obligatorio
+                   </span>
+                   <span *ngIf="formUser.get('email')?.errors?.['email']">
+                    El email debe ser válido
+               </span>
+                </div>
+            </div>
+            <button class="btn btn-primary" [disabled]="formUser.invalid">
+                Enviar
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- {{ formUser.get('name')?.value }}
+{{ formUser.get('email')?.value }} -->
+
+
+    <!-- <input type="button" value="EXIT" class="button">
+    <main class="mt-5">
+        <div class="fondo">1</div>
+        <div class="fondo">2</div>
+        <div class="fondo">3</div>
+        <div class="fondo">4</div>
+        <div class="fondo">5</div>
+        <div class="fondo">6</div>
+    </main>
+ -->
