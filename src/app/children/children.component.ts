@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -9,5 +9,11 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './children.component.css'
 })
 export class ChildrenComponent {
-  @Input() title?: String;
+  @Input() title?: string;
+
+  @Output() titleChange = new EventEmitter<string>();
+  
+  emitTitleChange(){
+    this.titleChange.emit(this.title);
+  }
 }

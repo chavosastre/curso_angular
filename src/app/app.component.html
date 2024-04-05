@@ -4,10 +4,14 @@
 <!-- <app-formulario></app-formulario> -->
 
 <div class="container">
+    <h2>Componente Padre</h2>
     <!-- <app-switch></app-switch> -->
     <!-- <app-formulario-plantilla></app-formulario-plantilla> -->
     <!-- <app-formulario-reactivo></app-formulario-reactivo> -->
-    <input type="text" class="form-control" [(ngModel)]="title" />
-    <app-children [title]="title"></app-children>
+    <input type="text" class="form-control mb-4" [(ngModel)]="title" />
+    <!-- Forma 1 de hacerlo -->
+    <!-- <app-children [title]="title" (titleChange)="title = $event"></app-children> -->
+    <!-- Forma 2 de hacerlo -->
+    <app-children [(title)]="title" ></app-children>
 </div>
 <router-outlet />
