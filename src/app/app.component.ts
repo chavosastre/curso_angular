@@ -9,6 +9,8 @@ import { SwitchComponent } from './switch/switch.component';
 import { FormularioPlantillaComponent } from './formulario-plantilla/formulario-plantilla.component';
 import { FormularioReactivoComponent } from './formulario-reactivo/formulario-reactivo.component';
 import { ChildrenComponent } from './children/children.component';
+import { AddMessagesComponent } from './add-messages/add-messages.component';
+import { ListMessagesComponent } from './list-messages/list-messages.component';
 
 
 
@@ -17,7 +19,7 @@ import { ChildrenComponent } from './children/children.component';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [FormsModule, RouterOutlet, ContadorComponent, BotonesComponent, FormularioComponent, BuclesComponent, SwitchComponent, FormularioPlantillaComponent, FormularioReactivoComponent, ChildrenComponent]
+    imports: [FormsModule, RouterOutlet, ContadorComponent, BotonesComponent, FormularioComponent, BuclesComponent, SwitchComponent, FormularioPlantillaComponent, FormularioReactivoComponent, ChildrenComponent, AddMessagesComponent, ListMessagesComponent]
 })
 export class AppComponent {
   title = 'curso angular';
